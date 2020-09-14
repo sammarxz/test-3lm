@@ -6,7 +6,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('name').notNullable();
     table.string('lastName').notNullable();
     table.integer('role').unsigned().notNullable();
-    table.date('birthDate').notNullable();
+    table.string('birthDate').notNullable();
     table.float('salary').notNullable();
 
     table.foreign('role')
