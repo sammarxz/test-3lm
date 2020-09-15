@@ -3,18 +3,30 @@ import knex from '../database/connection';
 
 class EmployeesController {
   async getAll(req: Request, res: Response) {
-    const employees = await knex('employees').select('*');
+    const employees = await knex('employees').select('*'); 
 
-    return res.json(employees);
+    Promise.all(employees.map(employee => {
+        return knex('roles')
+            .select('name').where('roleId', employee.role)
+            .then(role => {
+                employee.role = role[0].name;
+                return employee;
+            });
+    })).then(response => {
+        res.send(response);
+    });
   }
 
   async getOne(req: Request, res: Response) {
     const { id } = req.params;
     const employee = await knex('employees').where('id', id).first();
+    const employeeRole = await knex('roles').where('roleId', employee.role).first();
 
     if (!employee) {
       return res.status(400).json({ message: 'Role with this ID was not found' });
     }
+
+    employee.role = employeeRole;
 
     return res.json(employee);
   }
