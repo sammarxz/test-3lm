@@ -3,7 +3,7 @@ import React from 'react';
 import { ContainerWrapper } from './styles';
 
 type containerProps = {
-    children: object,
+    children: React.ReactNode,
     className: string
 };
 

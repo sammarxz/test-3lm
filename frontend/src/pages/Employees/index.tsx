@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import api from '../../services/api';
 
+// Components
+import Button from '../../components/Button';
+
 interface Employee {
     id: number,
     name: string,
@@ -21,8 +24,19 @@ const Employees = () => {
     }, []);
 
     return (
-        <div className="lh--1">
-            <h2 className="">Empregados</h2>
+        <section className="section">
+            <div className="section__header mb--big d--flex jc--spaceBetween ai--center">
+                <h2 className="lh--1">Empregados</h2>
+                <Button 
+                    color="primary" 
+                    textColor="white"
+                    borderColor="primary"
+                    size="normal"
+                    onClick={() => console.log('adicionar')}
+                >
+                    Adicionar
+                </Button>
+            </div>
             <table className="table">
                 <thead>
                     <tr>
@@ -41,7 +55,7 @@ const Employees = () => {
                     )) }
                 </tbody>
             </table>
-        </div>
+        </section>
     )
 }
 

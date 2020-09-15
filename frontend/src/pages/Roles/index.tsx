@@ -19,7 +19,7 @@ const Roles = () => {
 
     return (
         <div>
-            <h2 className="lh--1">Cargos</h2>
+            <h2 className="lh--1 mb--big">Cargos</h2>
             <table className="table">
                 <thead>
                     <tr>

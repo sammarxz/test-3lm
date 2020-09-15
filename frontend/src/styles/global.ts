@@ -48,12 +48,24 @@ const GlobalStyle = createGlobalStyle`
         background-color: var(--color-primary);
     }
 
+    .bg--white {
+        background-color: white;
+    }
+
+    .c--white {
+        color: white;
+    }
+
     .c--primary {
         color: var(--color-primary);
     }
 
     .c--lightText {
         color: var(--color-lightText);
+    }
+
+    .bc--primary {
+        border-color: var(--color-primary);
     }
 
     .fw--semiBold {
@@ -98,6 +110,14 @@ const GlobalStyle = createGlobalStyle`
 
     .d--grid {
         display: grid;
+    }
+
+    .jc--spaceBetween {
+        justify-content: space-between;
+    }
+
+    .ai--center {
+        align-items: center;
     }
 
     .m--0 {
