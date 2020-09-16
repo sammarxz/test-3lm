@@ -6,6 +6,8 @@ import GlobalStyle from './styles/global';
 
 // Pages
 import Employees from "./pages/Employees";
+import EmployeeEdit from './pages/EmployeeEdit';
+import NewEmployee from './pages/NewEmployee';
 import Roles from "./pages/Roles";
 
 // Components
@@ -21,8 +23,10 @@ const Routes = () => {
                 <Container className="d--grid layout">
                     <Header title="Keeployee" />
                     <Route exact path="/" component={ Employees } />
-                    <Route path="/employees" component={ Employees } />
-                    <Route path="/roles" component={ Roles } />
+                    <Route exact path="/employees" component={ Employees } />
+                    <Route exact path="/employees/new" component={ NewEmployee } />
+                    <Route exact path="/employees/:id/edit" component={ EmployeeEdit } />
+                    <Route exact path="/roles" component={ Roles } />
                 </Container>
             </>
         </BrowserRouter>

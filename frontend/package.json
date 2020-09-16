@@ -9,7 +9,6 @@
     "@types/jest": "^24.9.1",
     "@types/node": "^12.12.58",
     "@types/react": "^16.9.49",
-    "@types/react-dom": "^16.9.8",
     "axios": "^0.20.0",
     "font-awesome": "^4.7.0",
     "react": "^16.13.1",
@@ -42,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-dom": "^16.9.8",
     "@types/react-icons": "^3.0.0",
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.3"

@@ -41,4 +41,8 @@ export const Button = styled.button`
         height: 32px;
         padding: 0;
     }
+
+    &.is--full {
+        width: 100%;
+    }
 `;

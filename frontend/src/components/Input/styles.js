@@ -6,7 +6,7 @@ export const Input = styled.input`
     appearance: none;
     background: transparent;
     background-image: none;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 4px;
     color: var(--color-text);
     display: block;
@@ -17,9 +17,17 @@ export const Input = styled.input`
     padding: 0;
     position: relative;
     width: 100%;
+    transition: border-color .3s ease;
 
-    &:focus {
+    &:focus,
+    &.is--filled {
         background-color: var(--color-light);
-        padding: 16px 8px;
+        border-color: var(--color-lightText);
+        padding: 8px 16px;
+        height: auto;
+
+        &:focus {
+            border-color: var(--color-primary);
+        }
     }
 `;

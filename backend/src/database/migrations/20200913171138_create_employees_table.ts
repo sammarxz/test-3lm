@@ -7,7 +7,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('lastName').notNullable();
     table.integer('role').unsigned().notNullable();
     table.string('birthDate').notNullable();
-    table.float('salary').notNullable();
+    table.string('salary').notNullable();
 
     table.foreign('role')
       .references('roleId')

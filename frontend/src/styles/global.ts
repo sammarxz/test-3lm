@@ -59,6 +59,20 @@ const GlobalStyle = createGlobalStyle`
         overflow: visible;
     }
 
+    select {
+        background: var(--color-light);
+        border: 1px solid var(--color-lightText);
+        border-radius: 4px;
+        color: inherit;
+        outline: 0;
+        padding: 5px 16px;
+        width: 100%;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
     ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: var(--color-text);
         opacity: 1;
@@ -150,6 +164,18 @@ const GlobalStyle = createGlobalStyle`
 
     .d--grid {
         display: grid;
+    }
+
+    .gtc--2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gtc--3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gap--16 {
+        grid-gap: 16px;
     }
 
     .jc--spaceBetween {
