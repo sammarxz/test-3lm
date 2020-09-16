@@ -11,10 +11,9 @@ interface Employee {
     id: number,
     name: string,
     lastName: string,
-    role: string,
+    [role: string]: any;
     salary: string,
 };
-
 
 const Employees = () => {
     const [employees, setEmployees] = useState<Employee[]>([]);
@@ -34,7 +33,7 @@ const Employees = () => {
                     textColor="white"
                     borderColor="primary"
                     size="small"
-                    className="d--flex ai--center jc--spaceBetween"
+                    className="d--flex ai--center jc--center is--icon"
                     onClick={() => console.log('adicionar')}
                 >
                     <FiPlus size="1.2rem" /> 
@@ -44,7 +43,7 @@ const Employees = () => {
                 { employees.map(({ id, name, lastName, role, salary }) => (
                     <tr key={ id }>
                         <td>{`${name} ${lastName}`}</td>
-                        <td>{ role }</td>
+                        <td>{ role.name }</td>
                         <td>{ salary }</td>
                     </tr>
                 )) }

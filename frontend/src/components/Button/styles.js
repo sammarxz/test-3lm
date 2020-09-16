@@ -35,4 +35,10 @@ export const Button = styled.button`
     &--big {
         padding: 16px 24px;
     }
+
+    &.is--icon {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+    }
 `;

@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
         --color-primary: #3028B2;
         --color-text: #231E60;
         --color-lightText: #A0AAC8;
-        --color-light: #E1EAF9;
+        --color-light: #f0f4fc;
     }
 
     body {
@@ -59,12 +59,29 @@ const GlobalStyle = createGlobalStyle`
         overflow: visible;
     }
 
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: var(--color-text);
+        opacity: 1;
+    }
+      
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: var(--color-text);
+    }
+      
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: var(--color-text);
+    }
+
     .bg--primary {
         background-color: var(--color-primary);
     }
 
     .bg--white {
         background-color: white;
+    }
+
+    .bg--transparent {
+        background-color: transparent;
     }
 
     .c--white {
@@ -81,6 +98,10 @@ const GlobalStyle = createGlobalStyle`
 
     .bc--primary {
         border-color: var(--color-primary);
+    }
+
+    .bc--transparent {
+        border-color: transparent;
     }
 
     .fw--semiBold {
@@ -111,6 +132,10 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1;
     }
 
+    .td--underline {
+        text-decoration: underline;
+    }
+
     .d--inlineBlock {
         display: inline-block;
     }
@@ -129,6 +154,10 @@ const GlobalStyle = createGlobalStyle`
 
     .jc--spaceBetween {
         justify-content: space-between;
+    }
+
+    .jc--center {
+        justify-content: center;
     }
 
     .ai--center {

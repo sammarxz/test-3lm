@@ -11,7 +11,7 @@ const Table: React.FC<PropsWithChildren<Props>> = ({ head, children }) => (
         <thead>
             <tr>
                 {head.map((item:string) => (
-                    <th>{ item }</th>    
+                    <th key={item}>{ item }</th>    
                 ))}
             </tr>
         </thead>

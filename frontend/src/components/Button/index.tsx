@@ -10,7 +10,7 @@ type buttonProps = {
     children: React.ReactNode,
     className?: any,
     disabled?: boolean,
-    onClick: Function
+    onClick?: Function
 };
 
 const Button:React.FC<buttonProps> = ({
@@ -36,10 +36,16 @@ const Button:React.FC<buttonProps> = ({
         return className;
     }
 
+    const handleClick: React.MouseEventHandler<
+        HTMLButtonElement | HTMLAnchorElement
+    > = e => {
+        if (onClick) onClick(e);
+    };
+
     return (
         <Btn 
             className={handleCreateClassName(props)}
-            onClick={(e) => onClick(e)}
+            onClick={(e) => handleClick(e)}
             disabled={disabled}
         >
             {children}

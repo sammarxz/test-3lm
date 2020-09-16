@@ -7,9 +7,12 @@ class EmployeesController {
 
     Promise.all(employees.map(employee => {
         return knex('roles')
-            .select('name').where('roleId', employee.role)
+            .select('name', 'roleId').where('roleId', employee.role)
             .then(role => {
-                employee.role = role[0].name;
+                employee.role = {
+                  id: role[0].roleId,
+                  name: role[0].name
+                };
                 return employee;
             });
     })).then(response => {
