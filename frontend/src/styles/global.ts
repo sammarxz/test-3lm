@@ -44,6 +44,21 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
+    button, input, optgroup, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        margin: 0;
+    }
+
+    button, select {
+        text-transform: none;
+    }
+
+    button, input {
+        overflow: visible;
+    }
+
     .bg--primary {
         background-color: var(--color-primary);
     }
@@ -122,6 +137,10 @@ const GlobalStyle = createGlobalStyle`
 
     .m--0 {
         margin: 0;
+    }
+
+    .mr--small {
+        margin-right: 4px;
     }
 
     .mr--normal {

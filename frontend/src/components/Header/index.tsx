@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                 <ul>
                     <li>
                         <NavLink exact={true} to="/" activeClassName='is--active' className="c--lightText">
-                            <FiUsers /> Empregados
+                            <FiUsers /> Funcionários
                         </NavLink>
                     </li>
                     <li>

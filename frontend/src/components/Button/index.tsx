@@ -29,12 +29,11 @@ const Button:React.FC<buttonProps> = ({
             size:string | 'normal' 
         }
     ) => {
-        let classNames = '';
-        if (color) { classNames += `bg--${color} `};
-        if (textColor) { classNames += `c--${textColor} `};
-        if (borderColor) { classNames += `bc--${borderColor} `};
-        if (size) { classNames += `is--${size} `};
-        return classNames;
+        if (color) { className += ` bg--${color} `};
+        if (textColor) { className += `c--${textColor} `};
+        if (borderColor) { className += `bc--${borderColor} `};
+        if (size) { className += `is--${size} `};
+        return className;
     }
 
     return (
