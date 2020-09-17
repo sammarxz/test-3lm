@@ -1,5 +1,7 @@
-# Teste front-end 3LM
+# Teste front-end 3LM (Keeployee)
 Eu recentemente participei de um processo de seleção para uma vaga de **front-end developer**, esse foi o teste que eles passaram. Gostei bastante pois pude experimentar algumas coisas novas como [Typescript](https://www.typescriptlang.org/) no React, fazer um Back-end (sim eu sei que era de front-end, mas o back seria um bônus) e no back, pude experimentar o [KnexJS](http://knexjs.org/) que facilitou bastante o desenvolvimento.
+
+![Preview](https://github.com/sammarxz/test-3lm/blob/master/preview.png?raw=true)
 
 ## Sobre o Teste
 
