@@ -4,9 +4,13 @@ import { FiCheck } from "react-icons/fi";
 
 import api from '../../services/api';
 
+// Utils
+import { MaskMoney } from '../../utils';
+
 // Components
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+
 
 interface employeeEditProps {
     id: string;
@@ -80,6 +84,15 @@ const EmployeeEdit = ({ match }: RouteComponentProps<employeeEditProps>) => {
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = event.target;
+        
+        if (name === 'salary') {
+            const salary = MaskMoney(value);
+            setFormData({
+                ...formData,
+                salary
+            });
+            return;
+        }
 
         setFormData({
             ...formData,

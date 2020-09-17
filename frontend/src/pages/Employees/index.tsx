@@ -4,6 +4,9 @@ import { FiEdit3, FiPlus, FiTrash2, FiEye } from "react-icons/fi";
 
 import api from '../../services/api';
 
+// Utils
+import { FormatSalary } from "../../utils";
+
 // Components
 import Table from '../../components/Table';
 import Button from '../../components/Button';
@@ -69,7 +72,7 @@ const Employees = () => {
                     <tr key={ id }>
                         <td width="40%">{`${name} ${lastName}`}</td>
                         <td width="20%">{ role.name }</td>
-                        <td width="20%">{ salary }</td>
+                        <td width="20%">{ FormatSalary(salary) }</td>
                         <td>
                             <Link to={`/employees/${id}`}>
                                 <Button

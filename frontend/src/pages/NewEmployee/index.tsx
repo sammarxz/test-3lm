@@ -4,6 +4,9 @@ import { FiCheck } from "react-icons/fi";
 
 import api from '../../services/api';
 
+// Utils
+import { MaskMoney } from '../../utils';
+
 // Components
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -50,6 +53,8 @@ const NewEmployee = () => {
     const handleSubmit = (e:FormEvent) => {
         let error;
         e.preventDefault();
+
+        console.log(formData);
         
         if (formData.name && formData.lastName && formData.role && formData.salary && formData.birthDate) {
             const data = {...formData};
@@ -81,6 +86,20 @@ const NewEmployee = () => {
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = event.target;
+
+        if (name === 'salary') {
+            const salary = MaskMoney(value);
+
+            if (salary) {
+                setFormData({
+                    ...formData,
+                    salary
+                });
+            }
+
+            return;
+        }
+
         setFormData({
             ...formData,
             [name]: value
@@ -134,7 +153,7 @@ const NewEmployee = () => {
                     <div className="field-group">
                         <label htmlFor="salary">Salário</label>
                         <Input 
-                            type="number" 
+                            type="text" 
                             name="salary"
                             id="salary"
                             value={formData.salary}
